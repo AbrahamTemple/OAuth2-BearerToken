@@ -50,3 +50,14 @@ public interface GetResService {
     public ResponseResult<List<vongCover>> pages(@RequestHeader(value = HttpHeaders.AUTHORIZATION,required = false) String authentication);
 }
  ```
+
+# 测试结果
+
+> 认证结果
+![Screenshot](vong-oauth/result1.png)
+
+> 资源访问
+![Screenshot](vong-base/result2.png)
+
+> 客户端访问
+![Screenshot](vong-admin/result3.png)
