@@ -93,7 +93,14 @@ public interface GetResService {
 
 > 请求网关时增加一个access_token参数，如果认证成功则会把该参数添加到对应请求头
 
-> http://121.37.178.107:8079/auth/o/pass?username=vue&password=vue&clientId=cli&clientSecret=sec&access_token=
+``` bash
+http://121.37.178.107:8079/auth/o/pass?username=vue&password=vue&clientId=cli&clientSecret=sec&access_token=
+```
 
-> http://121.37.178.107:8079/base/ou/get?access_token=
+![Screenshot](olife-gateway/ret1.png)
 
+``` bash
+http://121.37.178.107:8079/base/ou/get?access_token=
+```
+
+![Screenshot](olife-gateway/ret2.png)
