@@ -1,0 +1,18 @@
+server:
+  port: 8079
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: olife-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${spring.cloud.nacos.discovery.ip}:${spring.cloud.nacos.discovery.port}
+        ip: 124.71.185.137
+        port: 8848
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yaml #文件扩展名
+        group: OLIFE_GROUP
