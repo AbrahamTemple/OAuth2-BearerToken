@@ -69,4 +69,31 @@ public interface GetResService {
 
 ## Gateway筛选有参请求并挂上请求头
 
+- 网关过滤配置
+
+``` java
+  @Override
+  public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+
+    String token = exchange.getRequest().getQueryParams().getFirst("access_token");//队列参数第一个
+    if(token == null){
+      exchange.getResponse().setStatusCode(HttpStatus.NOT_ACCEPTABLE);//回应一个不被接收的状态码：406
+      return exchange.getResponse().setComplete();//完成并退出
+    }
+
+    ServerHttpRequest host = exchange.getRequest().mutate().headers(httpHeaders -> {
+      httpHeaders.add(HttpHeaders.AUTHORIZATION,token);
+    }).build();
+    ServerWebExchange build = exchange.mutate().request(host).build();
+    return chain.filter(build);//这个请求通过
+}
+```
+
+- 测试
+
+> 请求网关时增加一个access_token参数，如果认证成功则会把该参数添加到对应请求头
+
+> http://121.37.178.107:8079/auth/o/pass?username=vue&password=vue&clientId=cli&clientSecret=sec&access_token=
+
+> http://121.37.178.107:8079/base/ou/get?access_token=
 
