@@ -1,4 +1,6 @@
-# OAuth2基于Feign的BearerToken请求头认证
+# SpnringCloud请求组件在OAuth2的应用
+
+## Feign挂上BearerToken请求头
 
 - 认证服务器业务
 
@@ -64,3 +66,7 @@ public interface GetResService {
 - 客户端访问
 
 ![Screenshot](vong-admin/result3.png)
+
+## Gateway筛选有参请求并挂上请求头
+
+
