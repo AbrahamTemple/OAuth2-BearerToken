@@ -10,7 +10,7 @@ spring:
     nacos:
       discovery:
         server-addr: ${spring.cloud.nacos.discovery.ip}:${spring.cloud.nacos.discovery.port}
-        ip: 124.71.185.137
+        ip: 127.0.0.1
         port: 8848
       config:
         server-addr: ${spring.cloud.nacos.discovery.server-addr}
