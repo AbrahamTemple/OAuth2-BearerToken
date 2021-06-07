@@ -1,5 +1,9 @@
 # SpnringCloud请求组件在OAuth2的应用
 
+## 思路图
+
+![Screenshot](design.png)
+
 ## Feign挂上BearerToken请求头
 
 - 认证服务器业务
